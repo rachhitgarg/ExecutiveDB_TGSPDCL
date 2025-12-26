@@ -292,7 +292,7 @@ def render_metric_card(label, value, delta=None, delta_prefix="", suffix="", is_
     st.markdown(f"""
         <div class="metric-card">
             <div class="metric-label">{label}</div>
-            <div class="metric-value">{value}{suffix}</div>
+            <div class="metric-value">{value}</div>
             {delta_html}
         </div>
     """, unsafe_allow_html=True)
@@ -602,7 +602,7 @@ else:
         # Top metrics row
         st.markdown('<div class="section-header">📡 Current Status</div>', unsafe_allow_html=True)
         
-        col1, col2, col3, col4 = st.columns(4)
+        col1, col2, col3 = st.columns(3)
         
         with col1:
             render_metric_card(
@@ -758,17 +758,6 @@ else:
                 is_inverse=True
             )
         
-        with col4:
-            # Cost savings calculation: ₹50 per AI-resolved call
-            savings = ai_resolved * 50
-            savings_yesterday = ai_yesterday * 50
-            change = ((savings - savings_yesterday) / savings_yesterday) * 100 if savings_yesterday > 0 else 0
-            render_metric_card(
-                "Cost Savings",
-                f"₹{savings:,.0f}",
-                delta=change,
-                suffix="%"
-            )
         
         st.markdown("<br>", unsafe_allow_html=True)
         
