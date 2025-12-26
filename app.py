@@ -73,13 +73,14 @@ st.markdown("""
         line-height: 1.1;
     }
     
-    .metric-label {
-        font-size: 14px;
-        color: #94A3B8;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 8px;
-    }
+  .metric-label {
+    font-size: 14px;
+    color: #E2E8F0 !important;  /* Brighter gray */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
     
     .metric-label-tv {
         font-size: 20px;
